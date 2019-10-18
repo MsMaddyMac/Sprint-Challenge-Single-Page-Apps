@@ -46,11 +46,10 @@ a {
   text-decoration: none;
 }
 
-/* .active {
-  
-  color: white;
-  padding: 24px;
-  height: 16px;
-  text-decoration: none;
+.search-form {
+  color: #e9b953;
+}
 
-} */
+input {
+  border-color:  #e9b953;
+}

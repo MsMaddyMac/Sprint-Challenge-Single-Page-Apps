@@ -32,7 +32,7 @@ export default function App() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/characters">Characters</NavLink>
       </NavBar>
-      <Header />
+      <Header />      
       <Route exact path="/" component={WelcomePage} />
       <Route path="/characters" component={CharacterList} />
     </Main>

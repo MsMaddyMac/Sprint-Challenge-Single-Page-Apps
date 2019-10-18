@@ -35,13 +35,13 @@ export default function CharacterList() {
   }, []);
 
   return (
-  
-    <Cards className="character-list">
-       <SearchForm />
+    <>
+    <SearchForm />
+    <Cards className="character-list">   
       {characters.map(character => (
         <CharacterCard key={character.id} character={character} />
       ))}
-       
     </Cards>
+    </>
   );
 }

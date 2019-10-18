@@ -3,40 +3,48 @@ import axios from "axios";
 
 
 export default function SearchForm() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
+  const [data, setData] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     axios
-    .get('https://rickandmortyapi.com/api/character/')
+    .get(`https://rickandmortyapi.com/api/character/`)
     .then(response => {
-      const name = response.data.results.filter(character =>
-        character.name.toLowerCase().includes(searchTerm.toLowerCase())
+      const characters = response.data.results.filter(character =>
+        character.name.toLowerCase().includes(query.toLowerCase())
       );
-      setSearchResult(name); 
-    })
-    .catch(error => {
-      console.log("No data found.", error);
+      setData(characters);
     });
-  }, [searchTerm]);
+  }, [query]);
 
-  const handleChange = event => {
-    setSearchTerm(event.target.value);
+  const handleInputChange = event => {
+    setQuery(event.target.value);
   };
  
   return (
     <section className="search-form">
      <form>
-       <label htmlFor="name">Search by name:</label>
+       <label htmlFor="name">Search by name: </label>
        <input
-        id="name"
         type="text"
-        name="textfield"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={handleChange}
+        onChange={handleInputChange}
+        value={query}
+        name="name"
+        tabIndex="0"
+        className="prompt search-name"
+        placeholder="Search by name"
+        autoComplete="off"
         />
      </form>
+     <div className="character">
+       {data.map(data => {
+         return (
+           <div className="character-list" key ={data.id}>
+              <span>{data.name}</span>
+          </div>
+         );
+       })}
+     </div>
     </section>
   );
 };
