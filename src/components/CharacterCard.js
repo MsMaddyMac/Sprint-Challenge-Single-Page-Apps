@@ -18,6 +18,7 @@ const Pulse = styled.div`
   }
 `;
 
+
 export default function CharacterCard(props) {
   const { name, status, species, gender, image } = props.character;
   return <Pulse className="character-card">

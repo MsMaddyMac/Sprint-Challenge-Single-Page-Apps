@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -6,11 +8,16 @@ export default function SearchForm() {
 
   useEffect(() => {
     axios
-    .get('')
-    const results = characters.filter(character =>
-      character.toLowerCase().includes(searchTerm.toLowerCase())
+    .get('https://rickandmortyapi.com/api/character/')
+    .then(response => {
+      const name = response.data.results.filter(character =>
+        character.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      setSearchResult(results);
+      setSearchResult(name); 
+    })
+    .catch(error => {
+      console.log("No data found.", error);
+    });
   }, [searchTerm]);
 
   const handleChange = event => {
@@ -19,7 +26,17 @@ export default function SearchForm() {
  
   return (
     <section className="search-form">
-     
+     <form>
+       <label htmlFor="name">Search by name:</label>
+       <input
+        id="name"
+        type="text"
+        name="textfield"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={handleChange}
+        />
+     </form>
     </section>
   );
-}
+};

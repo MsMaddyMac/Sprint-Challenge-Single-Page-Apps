@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from "./CharacterCard";
+import SearchForm from "./SearchForm";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -8,6 +9,8 @@ const Cards = styled.section`
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
 `;
 
 export default function CharacterList() {
@@ -32,11 +35,13 @@ export default function CharacterList() {
   }, []);
 
   return (
+  
     <Cards className="character-list">
-      {/* <h2>TODO: `array.map() over your state here!</h2> */}
+       <SearchForm />
       {characters.map(character => (
         <CharacterCard key={character.id} character={character} />
       ))}
+       
     </Cards>
   );
 }
