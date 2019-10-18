@@ -5,8 +5,6 @@ const Pulse = styled.div`
   transition: transform 0.2s ease-in;
   background: #cacfd2;
   color: #4b7fad;
-  width: 230px;
-  max-height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;

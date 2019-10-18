@@ -16,15 +16,20 @@ const NavBar = styled.nav`
   background-color: #97d8d7;
 `;
 
-// const Main = styled.main`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
+const Main = styled.div`
+  width: 100%;
+  max-width: 850px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
+
 
 export default function App() {
   return (
-    <main>
+    <Main>
       <NavBar className="navbar">
         <NavLink to="/" class="nav-links">Home</NavLink>
         <NavLink to="/characters" class="nav-links">Characters</NavLink>
@@ -32,6 +37,6 @@ export default function App() {
       <Header />
       <Route exact path="/" component={WelcomePage} />
       <Route path="/characters" component={CharacterList} />
-    </main>
+    </Main>
   );
 }
