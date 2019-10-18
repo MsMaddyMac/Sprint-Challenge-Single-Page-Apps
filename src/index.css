@@ -37,3 +37,12 @@ main {
 header h1 {
   text-align: center;
 }
+
+Link {
+  
+  color: white;
+  padding: 24px;
+  height: 16px;
+  text-decoration: none;
+
+}
