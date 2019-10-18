@@ -27,6 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
+    One of the benefits of client-side routing is the ability to quickly navigate between pages within an app. Less data is being processed at once which helps create smooth transitions.
+
 > Answer:
 
 ## Project Set Up

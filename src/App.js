@@ -8,6 +8,7 @@ import styled from "styled-components";
 const NavBar = styled.nav`
   margin: 0;
   padding: 0;
+  width: 100%;
   height: 64px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: flex;
@@ -18,12 +19,9 @@ const NavBar = styled.nav`
 
 const Main = styled.div`
   width: 100%;
-  max-width: 850px;
-  margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 `;
 
 
@@ -31,8 +29,8 @@ export default function App() {
   return (
     <Main>
       <NavBar className="navbar">
-        <NavLink to="/" class="nav-links">Home</NavLink>
-        <NavLink to="/characters" class="nav-links">Characters</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/characters">Characters</NavLink>
       </NavBar>
       <Header />
       <Route exact path="/" component={WelcomePage} />
