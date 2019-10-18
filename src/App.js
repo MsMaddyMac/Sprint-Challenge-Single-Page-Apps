@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header.js";
-import { Route, Link } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import CharacterList from "./components/CharacterList";
 import WelcomePage from "./components/WelcomePage";
 import styled from "styled-components";
@@ -16,14 +16,18 @@ const NavBar = styled.nav`
   background-color: #97d8d7;
 `;
 
-
+// const Main = styled.main`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// `;
 
 export default function App() {
   return (
     <main>
       <NavBar className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="/characters">Characters</Link>
+        <NavLink to="/" class="nav-links">Home</NavLink>
+        <NavLink to="/characters" class="nav-links">Characters</NavLink>
       </NavBar>
       <Header />
       <Route exact path="/" component={WelcomePage} />

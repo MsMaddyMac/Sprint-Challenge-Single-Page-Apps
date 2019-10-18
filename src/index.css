@@ -38,11 +38,19 @@ header h1 {
   text-align: center;
 }
 
-Link {
+
+.nav-links {
+  color: white;
+  padding: 24px;
+  height: 16px;
+  text-decoration: none;
+}
+
+/* .active {
   
   color: white;
   padding: 24px;
   height: 16px;
   text-decoration: none;
 
-}
+} */
