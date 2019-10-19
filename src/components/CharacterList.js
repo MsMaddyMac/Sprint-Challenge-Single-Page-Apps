@@ -16,6 +16,7 @@ const Cards = styled.section`
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -24,7 +25,10 @@ export default function CharacterList() {
       .get('https://rickandmortyapi.com/api/character/')
       .then(response => {
         console.log(response.data.results);
-        setCharacters(response.data.results);
+        const name = response.data.results.filter(character =>
+          character.name.toLowerCase().includes(query.toLowerCase())
+          );
+        setCharacters(name);
       })
       .catch(error => {
         console.error('Oops, no data found here!', error);
@@ -32,11 +36,15 @@ export default function CharacterList() {
     }
     getCharacters();
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  }, []);
+  }, [query]);
+
+  const handleInputChange = event => {
+    setQuery(event.target.value);
+  };
 
   return (
     <>
-    <SearchForm />
+    <SearchForm handleInputChange={handleInputChange} query={query}/>
     <Cards className="character-list">   
       {characters.map(character => (
         <CharacterCard key={character.id} character={character} />
