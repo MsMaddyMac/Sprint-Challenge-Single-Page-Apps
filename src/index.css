@@ -72,3 +72,15 @@ input {
   justify-content: center;
   align-items: center;
 }
+
+.main-img {
+  
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+.main-img:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
