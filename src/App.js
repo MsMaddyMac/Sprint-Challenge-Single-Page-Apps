@@ -5,6 +5,7 @@ import CharacterList from "./components/CharacterList";
 import WelcomePage from "./components/WelcomePage";
 import styled from "styled-components";
 
+
 const NavBar = styled.nav`
   margin: 0;
   padding: 0;
