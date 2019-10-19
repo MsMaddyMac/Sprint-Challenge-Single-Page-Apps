@@ -23,7 +23,7 @@ const FlipCard = styled.div`
   background-color: transparent;
   width: 300px;
   height: 380px;
-  border: 1px solid #f1f1f1;
+  border: 3px solid #f1f1f1;
   perspective: 1000px;
   display: flex;
   flex-direction: column;
