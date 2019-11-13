@@ -37,3 +37,49 @@ main {
 header h1 {
   text-align: center;
 }
+
+
+a {
+  color: white;
+  padding: 24px;
+  height: 16px;
+  text-decoration: none;
+}
+
+.search-form {
+  color: #e9b953;
+}
+
+input {
+  border-color:  #e9b953;
+}
+
+.flipcard-front, .flipcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.character-card:hover .flipcard-inner  {
+  transform: rotateX(180deg);
+}
+
+.flipcard-back {
+  transform: rotateX(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-img {
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+.main-img:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
